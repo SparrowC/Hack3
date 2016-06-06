@@ -57,6 +57,7 @@ public class CascadeLayout extends ViewGroup {
             width += mHorizontalSpacing;
             height += mVerticalSpacing;
         }
+
     }
 
     @Override
@@ -65,22 +66,22 @@ public class CascadeLayout extends ViewGroup {
         for (int i = 0; i < count; i++) {
             View child = getChildAt(i);
             Point point = points.get(i);
-            child.layout(point.x, point.y, child.getWidth() + point.x, child.getHeight() + point.y);
+            child.layout(point.x, point.y, child.getMeasuredWidth() + point.x, child.getMeasuredHeight() + point.y);
         }
     }
 
-    public static class LayoutParams extends ViewGroup.LayoutParams {
-
-        int x;
-        int y;
-
-        public LayoutParams(Context c, AttributeSet attrs) {
-            super(c, attrs);
-        }
-
-        public LayoutParams(int width, int height) {
-            super(width, height);
-        }
-
-    }
+//    public static class LayoutParams extends ViewGroup.LayoutParams {
+//
+//        int x;
+//        int y;
+//
+//        public LayoutParams(Context c, AttributeSet attrs) {
+//            super(c, attrs);
+//        }
+//
+//        public LayoutParams(int width, int height) {
+//            super(width, height);
+//        }
+//
+//    }
 }
